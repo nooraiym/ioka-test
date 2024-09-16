@@ -18,42 +18,44 @@ export const Pagination = () => {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1)
 
   return (
-    <div className={styles.pagination}>
-      <button
-        onClick={prevPage}
-        disabled={!isLooped && currentPage === 1}
-      >
-        {'<'}
-      </button>
-      <button
-        onClick={() => prevMultiplePages(PAGE_CHANGE_STEPS)}
-        disabled={!isLooped && currentPage === 1}
-      >
-        {'<<'}
-      </button>
-
-      {pages.map(page => (
+    <>
+      <div className={styles.pagination}>
         <button
-          key={page}
-          onClick={() => setPage(page)}
-          className={page === currentPage ? styles.active : ''}
+          onClick={prevPage}
+          disabled={!isLooped && currentPage === 1}
         >
-          {page}
+          {'<'}
         </button>
-      ))}
+        <button
+          onClick={() => prevMultiplePages(PAGE_CHANGE_STEPS)}
+          disabled={!isLooped && currentPage === 1}
+        >
+          {'<<'}
+        </button>
 
-      <button
-        onClick={() => nextMultiplePages(PAGE_CHANGE_STEPS)}
-        disabled={!isLooped && currentPage === totalPages}
-      >
-        {'>>'}
-      </button>
-      <button
-        onClick={nextPage}
-        disabled={!isLooped && currentPage === totalPages}
-      >
-        {'>'}
-      </button>
+        {pages.map(page => (
+          <button
+            key={page}
+            onClick={() => setPage(page)}
+            className={page === currentPage ? styles.active : ''}
+          >
+            {page}
+          </button>
+        ))}
+
+        <button
+          onClick={() => nextMultiplePages(PAGE_CHANGE_STEPS)}
+          disabled={!isLooped && currentPage === totalPages}
+        >
+          {'>>'}
+        </button>
+        <button
+          onClick={nextPage}
+          disabled={!isLooped && currentPage === totalPages}
+        >
+          {'>'}
+        </button>
+      </div>
 
       <div className={styles['pagination-mode']}>
         <label>
@@ -65,6 +67,6 @@ export const Pagination = () => {
           Зацикленная пагинация
         </label>
       </div>
-    </div>
+    </>
   )
 }

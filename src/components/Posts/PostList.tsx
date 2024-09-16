@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useAppContext } from '../../context/AppContext'
 import { Post, fetchPosts } from '../../utils/api'
+import styles from './PostList.module.scss'
 
 export const PostList = () => {
   const { currentPage, limit } = useAppContext()
@@ -26,18 +27,18 @@ export const PostList = () => {
   }, [currentPage])
 
   if (isLoading) {
-    return <div>Loading...</div>
+    return <div className={styles.loader}>Loading...</div>
   }
 
   if (error) {
-    return <div>{error}</div>
+    return <div className={styles.error}>{error}</div>
   }
 
   return (
-    <ul>
+    <ul className={styles.postList}>
       {posts.map(post => (
         <li key={post.id}>
-          <h2>{post.title}</h2>
+          <h2>{post.title.length}</h2>
           <p>{post.body}</p>
         </li>
       ))}
