@@ -1,6 +1,6 @@
 # Pagination Component
 
-[**Live Demo**]() - ссылка на деплой приложения.
+[**Result**](/src/assets/result.png) - результат.
 
 ## Описание
 
