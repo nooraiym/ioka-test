@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ioka-test/static/css/main.2e61ce42.css",
+    "main.js": "/ioka-test/static/js/main.3745263f.js",
+    "index.html": "/ioka-test/index.html",
+    "main.2e61ce42.css.map": "/ioka-test/static/css/main.2e61ce42.css.map",
+    "main.3745263f.js.map": "/ioka-test/static/js/main.3745263f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e61ce42.css",
+    "static/js/main.3745263f.js"
+  ]
+}
