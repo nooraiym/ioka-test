@@ -1,46 +1,84 @@
-# Getting Started with Create React App
+# Pagination Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[**Live Demo**]() - ссылка на деплой приложения.
 
-## Available Scripts
+## Описание
 
-In the project directory, you can run:
+Это тестовое задание для позиции Frontend Engineer на ioka, в котором реализован компонент пагинации. Проект создан с использованием **React**, **TypeScript**, и **SCSS** в рамках [Create React App (CRA)](https://create-react-app.dev/). В ходе работы был создан компонент для пагинации с отделением логики от UI, а также реализованы разные режимы работы пагинации.
 
-### `npm start`
+### Функциональные требования:
+- **Навигация**:
+  - Переход вперед на 1 страницу.
+  - Переход назад на 1 страницу.
+  - Переход вперед на несколько страниц.
+  - Переход назад на несколько страниц.
+  
+- **Режимы работы**:
+  1. **Зацикленная пагинация**: при переходе вперед с последней страницы происходит переход на первую, и наоборот.
+  2. **Обычная пагинация**: переход вперед запрещен, если текущая страница последняя, и назад — если первая.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **UI**:
+  - Отображение страниц в виде горизонтального списка.
+  - Кнопки вперед и назад.
+  - Кнопки для перехода на несколько страниц вперед/назад.
+  - Подсвечивание активной страницы.
+  - Управление фокусом для обеспечения доступности (focus management).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Стек технологий
 
-### `npm test`
+- **React** - библиотека для построения пользовательских интерфейсов.
+- **TypeScript** - статическая типизация для повышения качества кода.
+- **SCSS** - препроцессор для CSS, использован для стилизации компонентов.
+- **React Hooks** - управление состоянием и побочными эффектами с использованием хуков.
+- **CSS Modules** - для модульной стилизации компонентов.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Установка и запуск проекта
 
-### `npm run build`
+### 1. Клонирование репозитория
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/nooraiym/ioka-test.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Установка зависимостей
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Перейдите в директорию проекта и установите зависимости:
 
-### `npm run eject`
+```bash
+cd ваш_проект
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 3. Запуск приложения
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Для запуска локального сервера используйте:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Откройте в браузере [http://localhost:3000](http://localhost:3000), чтобы увидеть приложение.
 
-## Learn More
+## Структура проекта
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+src/
+├── components/                   # Компоненты приложения
+│   ├── Pagination                # Пагинация
+│     └── Pagination.tsx          # Компонент пагинации
+│     └── Pagination.module.scss  # Стили для пагинации
+│   └── Posts                     # Посты
+│     └── PostList.tsx            # Компонент постов
+│     └── PostList.module.scss    # Стили для постов
+├── hooks/
+│   └── usePagination.ts          # Хук для управления логикой пагинации
+├── context/
+│   └── AppContext.tsx            # Контекст для хранения состояний
+├── constants/                    # Константы
+│   └── main.ts
+├── styles/                       # Глобальные стили приложения
+│   ├── global.scss               # Стили
+│   └── variables.scss            # Переменные
+├── App.tsx                       # Главный компонент приложения
+├── index.tsx                     # Точка входа
+```
