@@ -1,5 +1,5 @@
 import React, { ReactNode, createContext, useContext, useState } from 'react'
-import { usePagination } from './usePagination'
+import { usePagination } from '../hooks/usePagination'
 
 interface AppContextProps {
   currentPage: number

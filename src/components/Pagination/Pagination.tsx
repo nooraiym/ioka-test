@@ -1,7 +1,6 @@
-import './Pagination.scss'
-import { useAppContext } from './Context'
-
-const PAGE_CHANGE_STEPS = 3
+import { PAGE_CHANGE_STEPS } from '../../constants/main'
+import { useAppContext } from '../../context/AppContext'
+import styles from './Pagination.module.scss'
 
 export const Pagination = () => {
   const {
@@ -19,7 +18,7 @@ export const Pagination = () => {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1)
 
   return (
-    <div className='pagination'>
+    <div className={styles.pagination}>
       <button
         onClick={prevPage}
         disabled={!isLooped && currentPage === 1}
@@ -37,7 +36,7 @@ export const Pagination = () => {
         <button
           key={page}
           onClick={() => setPage(page)}
-          className={page === currentPage ? 'active' : ''}
+          className={page === currentPage ? styles.active : ''}
         >
           {page}
         </button>
@@ -56,7 +55,7 @@ export const Pagination = () => {
         {'>'}
       </button>
 
-      <div className='pagination-mode'>
+      <div className={styles['pagination-mode']}>
         <label>
           <input
             type='checkbox'

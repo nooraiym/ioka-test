@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useAppContext } from './Context'
-import { Post, fetchPosts } from './api'
+import { useAppContext } from '../../context/AppContext'
+import { Post, fetchPosts } from '../../utils/api'
 
 export const PostList = () => {
   const { currentPage, limit } = useAppContext()

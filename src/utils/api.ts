@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "../constants/main"
+
 export interface Post {
   id: number
   title: string
@@ -12,7 +14,7 @@ export interface Post {
  */
 
 export const fetchPosts = async (page: number, limit: number): Promise<Post[]> => {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`)
+  const response = await fetch(`${API_BASE_URL}/posts?_page=${page}&_limit=${limit}`)
 
   if (!response.ok) {
     throw new Error('Error fetching data from server')

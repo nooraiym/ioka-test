@@ -1,5 +1,5 @@
-import { Pagination } from './Pagination'
-import { PostList } from './PostList'
+import { Pagination } from "./components/Pagination/Pagination"
+import { PostList } from "./components/Posts/PostList"
 
 export const App = () => {
   return (
