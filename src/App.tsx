@@ -1,10 +1,12 @@
-import React from 'react';
+import { Pagination } from './Pagination'
+import { PostList } from './PostList'
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
+    <div>
+      <h1>Posts</h1>
+      <PostList />
+      <Pagination />
     </div>
-  );
+  )
 }
-
-export default App;
